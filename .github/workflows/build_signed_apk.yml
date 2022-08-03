@@ -1,12 +1,5 @@
 name: Signed apk release
 
-env:
-  # The name of the main module repository
-  main_project_module: .
-
-  # The name of the Play Store
-  playstore_name: Findroid
-
 on:
   # Triggers the workflow on push or pull request events but only for default and protected branches
   push:
@@ -19,9 +12,11 @@ on:
 jobs:
   build:
 
+
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v1
       - name: Build Signed APK
         uses: victorbnl/build-signed-apk@main
         with:
