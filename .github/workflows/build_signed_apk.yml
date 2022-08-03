@@ -1,4 +1,4 @@
-name: Android CI
+name: Signed apk release
 
 env:
   # The name of the main module repository
