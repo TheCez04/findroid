@@ -1,0 +1,36 @@
+name: Android CI
+
+env:
+  # The name of the main module repository
+  main_project_module: app
+
+  # The name of the Play Store
+  playstore_name: Findroid
+
+on:
+  # Triggers the workflow on push or pull request events but only for default and protected branches
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Build Signed APK
+        uses: victorbnl/build-signed-apk@main
+        with:
+          keystore_b64: ${{ secrets.keystore }}
+          keystore_password: ${{ secrets.keystore_password }}
+          key_alias: ${{ secrets.key_alias }}
+          key_password: ${{ secrets.key_password }}
+      - name: Upload APK Release - ${{ env.repository_name }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: New - APK(s) release generated
+          path: ./build/outputs/apk/release/
