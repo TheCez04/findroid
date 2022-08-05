@@ -19,6 +19,10 @@ android {
         versionCode = 10
         versionName = "0.5.0"
     }
+    
+    lintOptions {
+       disable 'MissingTranslation'
+    }
 
     buildTypes {
         getByName("debug") {
