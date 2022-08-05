@@ -28,4 +28,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: New - APK(s) release generated
-          path: app/release/
+          path: app/build/outputs/apk/release/
