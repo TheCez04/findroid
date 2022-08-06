@@ -3,6 +3,8 @@ name: Signed apk release
 on:
   # Triggers the workflow on push or pull request events but only for default and protected branches
   push:
+    tags:
+      - '*'
     #branches: [ build ]
   pull_request:
     #branches: [ build ]
