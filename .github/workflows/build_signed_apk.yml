@@ -27,27 +27,27 @@ jobs:
       - name: Upload APK Release - Findroid_armv8
         uses: actions/upload-artifact@v3
         with:
-          name: New - APK(s) release generated
+          name: findroid_armv8.apk
           path: app/build/outputs/apk/release/*arm64-*.apk
       - name: Upload APK Release - Findroid_armv7
         uses: actions/upload-artifact@v3
         with:
-          name: New - APK(s) release generated
+          name: findroid_armv7.apk
           path: app/build/outputs/apk/release/*armeabi-*.apk
       - name: Upload APK Release - Findroid_universal
         uses: actions/upload-artifact@v3
         with:
-          name: New - APK(s) release generated
+          name: findroid_universal.apk
           path: app/build/outputs/apk/release/*universal-*.apk
       - name: Upload APK Release - Findroid_x86_64
         uses: actions/upload-artifact@v3
         with:
-          name: New - APK(s) release generated
+          name: findroid_x86_64.apk
           path: app/build/outputs/apk/release/*x86_64-*.apk
       - name: Upload APK Release - Findroid_x86
         uses: actions/upload-artifact@v3
         with:
-          name: New - APK(s) release generated
+          name: findroid_x86.apk
           path: app/build/outputs/apk/release/*x86-*.apk
       - name: Releasing using Hub
         uses: kyze8439690/action-release-releaseapk@master
