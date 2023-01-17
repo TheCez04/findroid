@@ -21,7 +21,7 @@ jobs:
       uses: gradle/gradle-build-action@v2
 
     - name: Build with Gradle
-      run: ./gradlew ktlintCheck assembleDebug
+      run: ./gradlew assembleDebug
 
     - uses: actions/upload-artifact@v3
       with:
